@@ -23,6 +23,7 @@ class Library:
         self._display_table.add_column("Author", justify="center", style="magenta")
         self._display_table.add_column("Publication Year", justify="center", style="green")
         self._display_table.add_column("Genre", justify="center", style="blue")
+        self._display_table.show_lines = True
 
     def _add_book(self, book_title):
         print("Adding Book to Library...")
