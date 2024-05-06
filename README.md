@@ -20,7 +20,8 @@ This is a library manager program that allows you to perform various operations 
 
 To get started with the library manager program, follow these steps:
 
-1. Clone the repository.
+1. Clone the repository, run this command: <br>
+git clone https://github.com/MohammadKhGh99/LibraryManager.git.
 2. Install the required dependencies.
 3. Run the program.
 
