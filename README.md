@@ -47,13 +47,17 @@ To get started with the library manager program, follow these steps:
 git clone https://github.com/MohammadKhGh99/LibraryManager.git
 2. Install the required dependencies:<br>
 pip install -r requirements.txt
-3. Run the program: python main.py
 
 ## Usage
 
-Once the program is running, you can use the following commands to interact with the library:
+Usage: python main.py [-h] [-a ADD] [-l {all,author,genre}] [-e EDIT] [-d DELETE]
 
-- `add`: Add a new book to the library.
-- `edit`: Edit the details of an existing book.
-- `delete`: Remove a book from the library.
-- `list`: View a list of all the books in the library.
+
+options:
+  -h, --help            show this help message and exit
+  -a ADD, --add ADD     Add a book. Provide the book title
+  -l {all,author,genre}, --list {all,author,genre}
+                        Display books. Choices are (all) to show all books, (author) by author name and (genre) by genre
+  -e EDIT, --edit EDIT  Edit a book. Provide the book title
+  -d DELETE, --delete DELETE
+                        Delete a book. Provide the book title
