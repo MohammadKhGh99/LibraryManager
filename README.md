@@ -50,9 +50,9 @@ pip install -r requirements.txt
 
 ## Usage
 
+<pre>
 Usage: python main.py [-h] [-a ADD] [-l {all,author,genre}] [-e EDIT] [-d DELETE]
 
-<pre>
 options:
   -h, --help            show this help message and exit
   -a ADD, --add ADD     Add a book. Provide the book title
