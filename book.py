@@ -27,9 +27,19 @@
             self.genre = new_genre
             
     def display_book(self):
-        print(f"{self._book_id + 1}. title: {self.title}\n"
-              f"   author: {self.author}\n"
-              f"   publication year: {self.publication_year}\n"
-              f"   genre: {self.genre}\n")
+        # print(f"{self._book_id + 1}. title: {self.title}\n"
+        #       f"   author: {self.author}\n"
+        #       f"   publication year: {self.publication_year}\n"
+        #       f"   genre: {self.genre}\n")
+        return self.title, self.author, self.publication_year, self.genre
+    
+    def to_dict(self):
+        return {
+                "title": self.title, 
+                "author": self.author,
+                "publication_year": self.publication_year, 
+                "genre": self.genre
+                }
+        
     
         

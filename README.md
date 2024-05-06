@@ -5,9 +5,14 @@
 This is a library manager program that allows you to perform various operations on books.
 
 ## Table of Contents
-- [Installation](#installation)
 
-- [Usage](#usage)
+- [Features](#Features)
+
+- [Prerequisites](#Prerequisites)
+
+- [Installation](#Installation)
+
+- [Usage](#Usage)
 
 ## Features
 
@@ -16,14 +21,33 @@ This is a library manager program that allows you to perform various operations 
 - Delete books: You can remove books from the library.
 - List all books: You can view a list of all the books in the library.
 
-## Getting Started
+## Prerequisites
+
+Before running the library manager program, make sure you have the following prerequisites installed:
+
+- Python 3: You need to have Python 3 installed on your system. You can download it from the official Python website: https://www.python.org/downloads/
+
+- Git: You need to have Git installed on your system to clone the repository. You can download it from the official Git website: https://git-scm.com/downloads/
+
+- Pip: Pip is the package installer for Python. It is usually installed by default with Python. You can check if it is installed by running the following command in your terminal:
+
+    ```
+    pip --version
+    ```
+
+    If it is not installed, you can install it by following the instructions on the official Pip website: https://pip.pypa.io/en/stable/installing/
+
+Once you have installed these prerequisites, you can proceed with the steps mentioned in the "Getting Started" section to run the library manager program.
+
+## Installation
 
 To get started with the library manager program, follow these steps:
 
-1. Clone the repository, run this command: <br>
-git clone https://github.com/MohammadKhGh99/LibraryManager.git.
-2. Install the required dependencies.
-3. Run the program.
+1. Clone the repository:<br>
+git clone https://github.com/MohammadKhGh99/LibraryManager.git
+2. Install the required dependencies:<br>
+pip install -r requirements.txt
+3. Run the program: python main.py
 
 ## Usage
 
