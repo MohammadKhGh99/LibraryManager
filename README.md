@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 Usage: python main.py [-h] [-a ADD] [-l {all,author,genre}] [-e EDIT] [-d DELETE]
 
-
+<pre>
 options:
   -h, --help            show this help message and exit
   -a ADD, --add ADD     Add a book. Provide the book title
@@ -61,3 +61,4 @@ options:
   -e EDIT, --edit EDIT  Edit a book. Provide the book title
   -d DELETE, --delete DELETE
                         Delete a book. Provide the book title
+</pre>
