@@ -100,19 +100,21 @@ class Library:
             option (str): The option to filter the books by.
         """
         print("Displaying All Books...")
-
+        print()
         # display books based on the option
         if option == "all":
             self._display_table.title = "All Books in Library"
             for book in self._books.values():
                 self._display_table.add_row(*book.display_book())
         elif option == "author":
+            author_name = input("Enter author name to filter by: ")
             self._display_table.title = "All Books in Library, Filtered by Author Name"
-            for book in self._books_by_author.values():
+            for book in self._books_by_author[author_name]:
                 self._display_table.add_row(*book.display_book())
         elif option == "genre":
+            genre_name = input("Enter genre to filter by: ")
             self._display_table.title = "All Books in Library, Filtered by Genre"
-            for book in self._books_by_genre.values():
+            for book in self._books_by_genre[genre_name]:
                 self._display_table.add_row(*book.display_book())
 
         # display the table
