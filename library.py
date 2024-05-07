@@ -35,8 +35,7 @@ class Library:
                                         f" {book_title}, (q) to quit: ")
             genre = input(f"Enter genre of book {book_title}, (q) to quit: ")
             
-            new_book = Book.create_book(book_title, author_name,
-                                        publication_year, genre)
+            new_book = Book(book_title, author_name, publication_year, genre)
             self._books_quantity += 1
             self._books[book_title] = new_book
 
