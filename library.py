@@ -48,10 +48,10 @@ class Library:
 
         # display table for books using rich python library
         self._display_table = Table()
-        self._display_table.add_column("Title", justify="center", style="cyan")
-        self._display_table.add_column("Author", justify="center", style="magenta")
+        self._display_table.add_column("Title", justify="center", style="green")
+        self._display_table.add_column("Author", justify="center", style="red")
         self._display_table.add_column("Publication Year", justify="center", style="green")
-        self._display_table.add_column("Genre", justify="center", style="blue")
+        self._display_table.add_column("Genre", justify="center", style="red")
         self._display_table.show_lines = True
 
     def _add_book(self, book_title):
@@ -174,59 +174,27 @@ class Library:
             self._books.pop(book_title)
             self._books_quantity -= 1
             print(f"Book {book_title} deleted successfully!")
-            
-    def _parse_arguments(self):
-        """
-        Parse command line arguments.
 
-        Returns:
-            ArgumentParser object: The parsed command line arguments.
+    def load_library_data(self):
         """
-        parser = argparse.ArgumentParser(description='Library Management System')
-        
-        # add arguments
-        parser.add_argument('-a', '--add', help='Add a book. Provide the book title')
-        parser.add_argument('-l', '--list', choices=['all', 'author', 'genre'], help='Display books. Choices are (all) to show all books, (author) by author name and (genre) by genre')
-        parser.add_argument('-e', '--edit', help='Edit a book. Provide the book title')
-        parser.add_argument('-d', '--delete', help='Delete a book. Provide the book title')
-        
-        return parser
-
-    def run_library(self):
+        Load the library data from the json file.
+        """
         try:
-            # load the library data from json file
             if os.path.exists("library_data.pkl"):
                 with open("library_data.pkl", "rb") as pickle_file:
                     all_data = pickle.load(pickle_file)
                     self._books = all_data["books"]
                     self._books_by_author = all_data["books_by_author"]
                     self._books_by_genre = all_data["books_by_genre"]
-
-            # parse the command line arguments
-            parser = self._parse_arguments()
-            args = parser.parse_args()
-            # check if any argument is provided
-            if not any(vars(args).values()):
-                parser.print_help()
-                return
-            if args.add:
-                # Adding a book to the library
-                self._add_book(args.add)
-            elif args.list:
-                # Listing all books from the library
-                self._list_books(args.list)
-            elif args.edit:
-                # Editing a book from the library
-                self._edit_book(args.edit)
-            elif args.delete:
-                # Deleting a book from the library
-                self._delete_book(args.delete)
         except Exception as e:
             print("ERROR: cannot load the library data from json file, "
                   "please run the library again")
             print("Exiting...")
-            return
-        
+
+    def save_library_data(self):
+        """
+        Save the library data to the json file.
+        """
         try:
             # save the library data in json file
             all_data = {
@@ -238,6 +206,23 @@ class Library:
                 pickle.dump(all_data, pickle_file)
         except Exception:
             print("ERROR: cannot save the library data in json file")
-        
 
-    
+    def run_library(self, parser):
+        args = parser.parse_args()
+        # check if any argument is provided
+        if not any(vars(args).values()):
+            parser.print_help()
+            return
+        if args.add:
+            # Adding a book to the library
+            self._add_book(args.add)
+        elif args.list:
+            # Listing all books from the library
+            self._list_books(args.list)
+        elif args.edit:
+            # Editing a book from the library
+            self._edit_book(args.edit)
+        elif args.delete:
+            # Deleting a book from the library
+            self._delete_book(args.delete)
+        
