@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-<pre>
+<pre> 
 Usage: python main.py [-h] [-a ADD] [-l {all,author,genre}] [-e EDIT] [-d DELETE]
 
 options:
