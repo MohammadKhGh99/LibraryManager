@@ -4,18 +4,11 @@
 
     Attributes
     ----------
-    _books_quantity : int
-        a class attribute to track the total number of books
-    _book_id : int
-        a unique id for each book instance
-    title : str
-        title of the book
-    author : str
-        author of the book
-    publication_year : str
-        publication year of the book
-    genre : str
-        genre of the book
+    _book_id (int): A unique id for each book instance
+    title (str): The title of the book
+    author (str): The name of the author of the book
+    publication_year (str): The publication year of the book
+    genre (str): The genre of the book
 
     Methods
     -------
@@ -24,19 +17,16 @@
     display_book()
         Return the details of the book.
     """
-    # current quantity of books in library
-    _books_quantity = 0
     
-    def __init__(self, title: str, author: str, publication_year: str, 
+    def __init__(self, id_number, title: str, author: str, publication_year: str, 
                  genre: str):
         # gives the books an automatic increment id number
-        self._book_id = Book._books_quantity
+        self._book_id = id_number
         self.title = title
         self.author = author
         self.publication_year = publication_year
         self.genre = genre
         # we have new book created
-        Book._books_quantity += 1
         
     def edit_book(self, new_author="", new_publication_year="", new_genre=""):
         """
