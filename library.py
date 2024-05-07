@@ -108,11 +108,17 @@ class Library:
                 self._display_table.add_row(*book.display_book())
         elif option == "author":
             author_name = input("Enter author name to filter by: ")
+            if author_name not in self._books_by_author.keys():
+                print(f"ERROR: there are no books by author [{author_name}]")
+                return
             self._display_table.title = "All Books in Library, Filtered by Author Name"
             for book in self._books_by_author[author_name]:
                 self._display_table.add_row(*book.display_book())
         elif option == "genre":
             genre_name = input("Enter genre to filter by: ")
+            if genre_name not in self._books_by_genre.keys():
+                print(f"ERROR: there are no books in genre [{genre_name}]")
+                return
             self._display_table.title = "All Books in Library, Filtered by Genre"
             for book in self._books_by_genre[genre_name]:
                 self._display_table.add_row(*book.display_book())
