@@ -45,7 +45,9 @@ To get started with the library manager program, follow these steps:
 
 1. Clone the repository:<br>
 git clone https://github.com/MohammadKhGh99/LibraryManager.git
-2. Install the required dependencies:<br>
+2. Change directory to the project:
+cd LibraryManager
+3. Install the required dependencies:<br>
 pip install -r requirements.txt
 
 ## Usage
