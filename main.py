@@ -9,7 +9,8 @@ def parse_arguments():
     Returns:
         ArgumentParser object: The parsed command line arguments.
     """
-    parser = argparse.ArgumentParser(description='Library Management System', usage="python ")
+    parser = argparse.ArgumentParser(description='Library Management System')
+    parser.usage = "python " + parser.uasge
 
     # add arguments
     parser.add_argument('-a', '--add', help='Add a book. Provide the book title')
